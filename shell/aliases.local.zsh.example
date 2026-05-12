@@ -1,0 +1,21 @@
+# cmux-setup aliases — 머신/회사별 사적 alias 템플릿
+# 사용:
+#   cp shell/aliases.local.zsh.example shell/aliases.local.zsh
+# 그 다음 본인 환경에 맞게 수정.
+# aliases.local.zsh 는 .gitignore 에 등록되어 있어 push 되지 않는다.
+
+# ─── 자주 쓰는 프로젝트 단축 alias (예시) ───────────────────────────
+# nginx 포트는 server { listen ... } 값과 동일하게 맞춘다.
+
+# 단일 프로젝트
+# alias myapp='cmx ~/work/myapp 80'
+# alias myapi='cmx ~/work/myapi 3000 --v-simple'
+
+# 멀티-서비스 묶음
+# alias acme_web='cmx ~/work/acme/web 80'
+# alias acme_api='cmx ~/work/acme/api 3000'
+# alias acme_admin='cmx ~/work/acme/admin 8080'
+# alias acme_all='acme_web && acme_api && acme_admin && cmux notify --title "acme 환경 준비 완료" --body "3개 워크스페이스 부팅 완료"'
+
+# 가벼운 개발 도구는 simple 레이아웃 (브라우저 + 쉘만)
+# alias mytool='cmx ~/work/mytool 5173 --v-simple'

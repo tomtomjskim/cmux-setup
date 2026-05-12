@@ -1,0 +1,24 @@
+name: smoke
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  smoke:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bash version
+        run: bash --version
+
+      - name: shellcheck (advisory)
+        run: |
+          brew install shellcheck >/dev/null
+          shellcheck -S warning install.sh bin/*.sh tests/smoke.sh shell/aliases.zsh || true
+
+      - name: Run smoke tests (mock cmux)
+        run: ./tests/smoke.sh

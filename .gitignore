@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+*.swp
+
+# 로그·임시
+*.log
+/tmp/
+/tmp-cmux-*
+
+# 머신/회사별 사적 alias (외부 노출 회피)
+shell/aliases.local.zsh
+
+# 에디터
+.idea/
+.vscode/
+*.iml
+
+# Node 등 (혹시 향후 다른 도구 추가될 때 대비)
+node_modules/
+
+# Bash 임시
+*.bak

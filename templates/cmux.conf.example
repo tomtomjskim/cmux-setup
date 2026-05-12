@@ -1,0 +1,31 @@
+# .cmux.conf — 프로젝트별 영구 설정 템플릿
+#
+# 사용:
+#   cp "$CMUX_SETUP_DIR/templates/cmux.conf.example" <project>/.cmux.conf
+#   $EDITOR <project>/.cmux.conf
+#
+# 이후 `cmx <project>` 또는 `cd <project> && cmx` 만으로 자동 로드.
+# 우선순위: 명령행 인자 > .cmux.conf > 스크립트 기본값
+#
+# 보안: 이 파일은 source 되지 않고 KEY=VALUE 만 화이트리스트 파싱됩니다.
+#       허용 키: PORT, BROWSER_URL, DEV_CMD, TEST_CMD, CLAUDE_CMD, CODEX_CMD, LAYOUT
+
+# ─── 포트 / 브라우저 ──────────────────────────────────────────────
+PORT=80
+# BROWSER_URL 비우면 http://localhost:$PORT
+# BROWSER_URL=http://app.local
+# BROWSER_URL=http://app.local:9090
+
+# ─── 자동 실행 명령 ───────────────────────────────────────────────
+# default 레이아웃은 왼쪽 위/아래에 CLAUDE_CMD / CODEX_CMD 실행.
+# simple/4split 레이아웃은 왼쪽에 DEV_CMD 실행.
+
+# DEV_CMD="npm run dev"            # 비워두면 빈 쉘 (nginx 가 포트 띄우는 환경)
+# TEST_CMD="phpunit --watch"       # 4split 의 test 패널. 비우면 빈 쉘.
+# CLAUDE_CMD="claude"              # 기본값. 권한 우회가 필요하면:
+#                                  #   CLAUDE_CMD="claude --dangerously-skip-permissions"
+# CODEX_CMD="codex"                # 본인 도구로. 빈 문자열로 두면 빈 쉘.
+
+# ─── 레이아웃 ─────────────────────────────────────────────────────
+# default | simple | 4split
+# LAYOUT="default"
