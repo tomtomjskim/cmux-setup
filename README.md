@@ -1,5 +1,9 @@
 # cmux-setup
 
+<p align="center">
+  <img src=".github/assets/social-preview.png" alt="cmux-setup — macOS helper for cmux" width="100%">
+</p>
+
 [![smoke](https://github.com/tomtomjskim/cmux-setup/actions/workflows/smoke.yml/badge.svg)](https://github.com/tomtomjskim/cmux-setup/actions/workflows/smoke.yml)
 [![macOS](https://img.shields.io/badge/macOS-Apple%20Silicon%20%7C%20Intel-black?logo=apple)](https://www.apple.com/macos)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
